@@ -13,6 +13,20 @@ module.exports = {
           'sass-loader', // 1. compile sass to css
         ],
       },
+      {
+        test: /\.html$/,
+        use: ['html-loader'],
+      },
+      {
+        test: /\.(svg|png|jpeg|gif)$/,
+        use: {
+          loader: 'file-loader',
+          options: {
+            name: '[name].[hash].[ext]',
+            outputPath: 'imgs',
+          },
+        },
+      },
     ],
   },
   plugins: [
